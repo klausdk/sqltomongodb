@@ -222,4 +222,15 @@ function where2mg($str) {
 
 }
 
+function getrequest() {
+  ### magicquotes check
+  if (!get_magic_quotes_gpc()) {
+    array_walk_recursive($_GET, 'addslashes_gpc');
+    array_walk_recursive($_POST, 'addslashes_gpc');
+    array_walk_recursive($_COOKIE, 'addslashes_gpc');
+    array_walk_recursive($_REQUEST, 'addslashes_gpc');
+  }
+	import_request_variables("gp", "r_");
+}
+
 ?>

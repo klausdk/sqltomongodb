@@ -1,6 +1,5 @@
 <?
 
-	include ("generel.php");
 	include ("thislib.php");
 
 	getrequest();
@@ -154,9 +153,6 @@ eof;
 			
 			$mongo = "db.$mg_collection.$findcommand( $mg_where$mg_fields )$mg_distinct$mg_count$mg_skip$mg_sort$mg_limit";
 
-			### for testing
-			infolog ("sqltomong", "sql:\n\n $r_sql\n\n mongo:\n\n $mongo\n\n");
-
 		} else {
 			sqlerror ("unsupported querytype for the time being: " . $sql['querytype']);
 		}
@@ -276,6 +272,7 @@ eof;
 
 <h3>To do: </h3>
 <ul>
+  <li> Need css work </li>
 	<li> Make != work</li>
 	<li> select distinct</li>
 	<li> select a in (x,x,x)</li>
